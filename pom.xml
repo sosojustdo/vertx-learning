@@ -6,7 +6,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <vertx.version>3.4.2</vertx.version>
+        <vertx.version>3.5.3</vertx.version>
         <main.class>io.vertx.core.Launcher</main.class>
         <main.verticle>io.example.MainVerticle</main.verticle>
     </properties>
@@ -18,14 +18,12 @@
             <version>${vertx.version}</version>
         </dependency>
         
-        <!-- https://mvnrepository.com/artifact/io.vertx/vertx-web -->
 		<dependency>
 		    <groupId>io.vertx</groupId>
 		    <artifactId>vertx-web</artifactId>
 		    <version>${vertx.version}</version>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/io.vertx/vertx-hazelcast -->
 		<dependency>
 		    <groupId>io.vertx</groupId>
 		    <artifactId>vertx-hazelcast</artifactId>
@@ -63,7 +61,7 @@
             <version>${vertx.version}</version>
             <scope>test</scope>
         </dependency>
-
+        
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -81,11 +79,6 @@
 		    <groupId>com.zaxxer</groupId>
 		    <artifactId>HikariCP</artifactId>
 		    <version>3.2.0</version>
-		</dependency>
-		<dependency>
-		  <groupId>org.opensymphony.quartz</groupId>
-		  <artifactId>quartz-all</artifactId>
-		  <version>1.6.1</version>
 		</dependency>
     </dependencies>
 

@@ -1,13 +1,15 @@
 package com.vertx.learning.threadsafe;
 
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Vertx;
 
+/**
+ * Description: HttpServer
+ * All Rights Reserved.
+ * @version 1.0  2018年8月1日 下午12:32:16  by 代鹏（daipeng.456@gmail.com）创建
+ */
 public class MyVerticle extends AbstractVerticle {
     
     private int i = 0;// 属性变量
-    
-    private static Vertx vertx = Vertx.vertx();
     
     public int getI() {
         return i;

@@ -1,12 +1,17 @@
 package com.vertx.learning.helloworld;
 
-import io.vertx.core.Vertx;
+import io.vertx.core.AbstractVerticle;
 
-public class WebServerStart {
+public class WebServerStart extends AbstractVerticle{
     
-    public static void main(String[] args){
-        Vertx vertx = Vertx.vertx();
+    @Override
+    public void start() throws Exception {
         vertx.deployVerticle(WebServerVerticle.class.getName());
+    }
+    
+    public static void main(String[] args) throws Exception{
+        WebServerStart server = new WebServerStart();
+        server.start();
     }
 
 }
