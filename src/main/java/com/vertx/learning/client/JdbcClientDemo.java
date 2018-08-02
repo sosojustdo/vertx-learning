@@ -82,11 +82,34 @@ public class JdbcClientDemo extends AbstractVerticle {
         public JdbcOperator(JDBCClient jdbcClient) {
             this.jdbcClient = jdbcClient;
         }
-
+        
+        /**
+         * link:https://vertx.io/docs/vertx-sql-common/java/#_the_sql_connection
+         * Description:setAutoCommit、batch、batchWithParams、batchCallableWithParams
+         * @Version1.0 2018年8月1日 下午9:04:53 by 代鹏（daipeng.456@gmail.com）创建
+         */
         public void setAutoCommit() {
-
+            jdbcClient.getConnection(res -> {
+                if (res.succeeded()) {
+                    SQLConnection connection = res.result();
+                    connection.setAutoCommit(false, res1 -> {
+                        if (res1.succeeded()) {
+                          // OK!
+                        } else {
+                          // Failed!
+                        }
+                      });
+                } else {
+                    // TODO 获取连接失败 - 处理失败的情况
+                }
+            });
         }
-
+        
+        /**
+         * link:https://vertx.io/docs/vertx-sql-common/java/#_the_sql_connection
+         * Description: query、queryWithParams、querySingle、querySingleWithParams、update、updateWithParams、call、callWithParams
+         * @Version1.0 2018年8月1日 下午8:59:29 by 代鹏（daipeng.456@gmail.com）创建
+         */
         public void simpleQuery() {
             jdbcClient.query("SELECT * FROM wx_user limit 10", ar -> {
                 if (ar.succeeded()) {
