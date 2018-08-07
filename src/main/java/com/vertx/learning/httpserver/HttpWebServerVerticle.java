@@ -1,4 +1,4 @@
-package com.vertx.learning.helloworld;
+package com.vertx.learning.httpserver;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
